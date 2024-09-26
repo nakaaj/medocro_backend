@@ -272,7 +272,7 @@ def getcaption(url):
     image.save(save_path, "JPEG")
     myfile = BlipProcessor.upload_file(save_path)
     model = BlipProcessor.GenerativeModel("gemini-1.5-flash")
-    text = "tell me about this image"
+    text = "tell me about this image medically. generate it like you are the person with these medical conditions."
     result = model.generate_content([myfile, "\n\n", text],generation_config=BlipProcessor.types.GenerationConfig(max_output_tokens=250,temperature=1.0,),)
     BlipProcessor.delete_file(myfile.name)
     return result.text
