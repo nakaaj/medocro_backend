@@ -8,7 +8,6 @@ import os
 import jwt
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import ollama
-import openai
 import os
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -17,7 +16,6 @@ import textwrap
 import requests
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
-import google.generativeai as genai
 from io import BytesIO
 
 def random16digit():
